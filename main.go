@@ -17,8 +17,8 @@ import (
 func main() {
 	userService := services.NewUserService()
 	minioEndpoint := getEnv("MINIO_ENDPOINT", "minio:9000")
-	minioAccessKey := getEnv("MINIO_ACCESS_KEY", "minioadmin")
-	minioSecretKey := getEnv("MINIO_SECRET_KEY", "minioadmin")
+	minioAccessKey := getEnv("MINIO_ACCESS_KEY", "admin")
+	minioSecretKey := getEnv("MINIO_SECRET_KEY", "password")
 	minioBucket := getEnv("MINIO_BUCKET", "users")
 	minioUseSSL := strings.EqualFold(getEnv("MINIO_USE_SSL", "false"), "true")
 	integrationService, err := services.NewIntegrationService(minioEndpoint, minioAccessKey, minioSecretKey, minioBucket, minioUseSSL)
